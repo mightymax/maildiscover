@@ -1,0 +1,3 @@
+# Maildiscover service
+
+... todo: write documentation ...

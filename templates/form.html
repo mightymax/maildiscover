@@ -1,0 +1,47 @@
+<div class="jumbotron">
+    <h1 class="display-4">Maildiscover</h1>
+    <p class="lead">Auto configure mailclients</p>
+    <p>
+      <small>Supports <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration/FileFormat/HowTo">Mozilla Autoconfig</a>, 
+      <a href="https://docs.microsoft.com/en-us/Exchange/architecture/client-access/autodiscover?view=exchserver-2019">Microsoft Autodiscover</a> and 
+      <a href="https://developer.apple.com/documentation/devicemanagement/mail">Apple Mail/CalDAV/CardDAV</a> Profiles. For Apple Mail configuration, fill in this form. 
+      This will trigger a profile download, your Apple device will aks for your confirmation to install this.</small>
+    </p>
+    <hr class="my-4">
+    <form action="./mobileconfig/" method="POST" id="profileFrm">
+      <div class="form-group row">
+        <label for="emailaddress" class="col-sm-3 col-form-label">Email address</label>
+        <div class="col-sm-9">
+          <input type="email" required class="form-control" id="emailaddress" name="emailaddress" placeholder="john.doe@example.com (required)">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="cn" class="col-sm-3 col-form-label">Full name</label>
+        <div class="col-sm-9">
+          <input type="cn" class="form-control" id="cn" placeholder="John Doe (optional)" name="cn">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="password" name="password" placeholder="••••••••• (optional)">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">&nbsp;</label>
+        <div class="col-sm-9">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Download configuration</button>
+            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">More options &hellip;</span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#" data-path="/mail/config-v1.1.xml">Show Mozilla Profile</a>
+              <a class="dropdown-item" href="#" data-path="/mobileconfig/">Show Apple Profile</a>
+              <a class="dropdown-item" href="#" data-path="/autodiscover/autodiscover.xml">Show Microsoft Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+     </form>
+    </div>
